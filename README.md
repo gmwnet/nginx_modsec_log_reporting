@@ -1,6 +1,8 @@
 # Exceedingly simple ModSecurity/Nginx error log reporting
 ## V2.0
 
+###HEY!  Thanks for viweing my first github project.  I'm proud of it singularly, and I'm looking to add more!
+
 V2.0 updates: Added ModSec audit log parsing and reporting, added a OWASP CRS rule import and detail page for the reports, added an index.php dashboard, misc fine tuning of code and design.  Updated Readme.
 
 To do for v3.0:  Make this a proper app and do some stuff like a database object and other functions.
