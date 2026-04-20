@@ -26,7 +26,7 @@ If you're curious, I finally got ModSecurity running thanks to inspiration from 
 ## Requirements
 
 * LEMP stack (I'm on Ubuntu 24 LTS with stock nginx)
-* ModSecurity compiled with nginx and active and working to your liking (I'm on )
+* ModSecurity compiled with nginx and active and working to your liking (I'm on Nginx 1.24.0, ModSecurity-nginx v1.0.4, CRS v4.25.0 LTS)
 * ModSecurity audit logging setup with the following options:
 
 ```
