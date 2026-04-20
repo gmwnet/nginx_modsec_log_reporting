@@ -13,16 +13,12 @@ error_reporting(E_ALL);
 #Set to your desired time zone
 date_default_timezone_set('America/Los_Angeles');
 
-/* ============================================================
-   DATABASE - be sure to set your own variables
-   I store them in files outside the web root
-   Change as appropriate
-   ============================================================ */
+// ================= DB CONNECTION =================
 
-$dbHost = file_get_contents("/path/to/config/dbserver.cfg");
-$dbUser = file_get_contents("/path/to/config/dbuser.cfg");
-$dbPass = file_get_contents("/path/to/config/dbpass.cfg");
-$dbName = file_get_contents("/path/to/config/dbname.cfg");
+$dbHost = file_get_contents("/path/to/a/plain/text/file/with/this/variable/filename.cfg");
+$dbUser = file_get_contents("/path/to/a/plain/text/file/with/this/variable/filename.cfg");
+$dbPass = file_get_contents("/path/to/a/plain/text/file/with/this/variable/filename.cfg");
+$dbName = 'security_logs';
 
 $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 if ($mysqli->connect_error) {
@@ -39,7 +35,7 @@ function fetchAll($mysqli, $sql) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ModSecurity Dashboard</title>
+    <title>ModSecurity Nginx Error Logs</title>
     <style>
         body { font-family: Arial, sans-serif; background: #f4f6f8; }
         h1, h2 { color: #333; }
@@ -54,7 +50,7 @@ function fetchAll($mysqli, $sql) {
 <body>
 <div class="container">
 
-<h1>🛡️ ModSecurity Dashboard</h1>
+<h2><a href="index.php">🛡️</a> ModSecurity Nginx Error Logs</h2>
 
 <?php
 // ================= OVERALL STATS =================

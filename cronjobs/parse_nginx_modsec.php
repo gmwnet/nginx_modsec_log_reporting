@@ -14,10 +14,6 @@
  * * https://yourserver/parse_nginx_modsec.php?file=/var/log/nginx/error.log&batch=1000&dryrun=1&debug=1
  */
 
-#Should be commented out on production
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 /* ============================================================
    ENV DETECTION
@@ -63,10 +59,10 @@ if (!$realLog || strpos($realLog, realpath($allowedBaseDir)) !== 0) {
    I store them in files outside the web root
    Change as appropriate
    ============================================================ */
-$dbHost = file_get_contents("/path/to/config/dbserver.cfg");
-$dbUser = file_get_contents("/path/to/config/dbuser.cfg");
-$dbPass = file_get_contents("/path/to/config/dbpass.cfg");
-$dbName = file_get_contents("/path/to/config/dbname.cfg");
+$dbHost = file_get_contents("/path/to/a/plain/text/file/with/this/variable/filename.cfg");
+$dbUser = file_get_contents("/path/to/a/plain/text/file/with/this/variable/filename.cfg");
+$dbPass = file_get_contents("/path/to/a/plain/text/file/with/this/variable/filename.cfg");
+$dbName = file_get_contents("/path/to/a/plain/text/file/with/this/variable/filename.cfg");
 
 $mysqli = new mysqli($dbHost, $dbUser, $dbPass, $dbName);
 if ($mysqli->connect_error) {
