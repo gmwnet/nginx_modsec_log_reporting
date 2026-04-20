@@ -28,20 +28,21 @@ If you're curious, I finally got ModSecurity running thanks to inspiration from 
 * LEMP stack (I'm on Ubuntu 24 LTS with stock nginx)
 * ModSecurity compiled with nginx and active and working to your liking (I'm on )
 * ModSecurity audit logging setup with the following options:
-`
+
+```
 SecAuditEngine RelevantOnly
 SecAuditLogRelevantStatus "^(?:5|4(?!04))"
 SecAuditLogType Serial
 SecAuditLog /var/log/modsec/modsec_audit.json #Or wherever you desire; adjust the parsing scripts
 SecAuditLogFormat JSON
 SecAuditLogParts ABHZ
-`
+```
 
 ## Optional
 * [OWASP Core Rule Set](https://owasp.org/www-project-modsecurity-core-rule-set/) downloaded and in use.  This is needed to import the rules into the database for ease of use.
 * My reports use [Bootstrap](https://https://getbootstrap.com/) and [Data Tables](https://datatables.net/).  If you don't like those, take them out in the scripts.
 * I suggest you setup a log rotation for the CRS audit logs.  They can get big if you have a lot of traffic.  I set a file in /etc/logrotate.d/modsec that has the following:
-`
+```
     /var/log/modsec/*.json {
         daily
         missingok
@@ -50,7 +51,7 @@ SecAuditLogParts ABHZ
         notifempty
         copytruncate
     }
-`
+```
 
 
 ## Installation
